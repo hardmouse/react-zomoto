@@ -84,6 +84,7 @@ function App() {
           </div>
 
           <main className="row no-gutters">
+          {!restaurantList.length ? ( <div className='col-12'><div className="card"><div><h2> Sorry, no result found.</h2><p>Please try other city or different key words. :)</p></div></div></div>):("")}
           {restaurantList.map((resta, idx) => (
               <div className="col-12 col-lg-6" key={idx}>
                 
