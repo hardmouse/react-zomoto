@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import './assets/style/restaurant.css';
 import { useState, useEffect } from 'react';
-import { cities } from './model/city-list'
+import { cities } from './model/city-list';
+import { mocks } from './assets/mockData'
 
 function App() {
 
@@ -34,7 +35,7 @@ function App() {
   }
 
   function showEntity(_obj,_name,_class=""){
-    let _reval = _obj ? ( <div className={_class}> {_name} {_obj} </div>):(" ");
+    let _reval = _obj ? ( <div className={_class}><i>{_name}</i><b>{_obj}</b> </div>):(" ");
     return _reval;
   }
   useEffect(()=>{
@@ -47,10 +48,18 @@ function App() {
       })
     .then((response) => {
       response.json().then((data) => {
-        console.log(data.restaurants);
-        setRestaurantList(data.restaurants);
+        if(!data.code){
+          console.log(data);
+          setRestaurantList(data.restaurants);
+        }else{
+          console.log(mocks);
+          setRestaurantList(mocks);
+        }
       });
     })
+    .catch((error) => {
+      console.log(error);
+    });
   },[search])
   
   return (
@@ -66,19 +75,23 @@ function App() {
 
           <div className="row no-gutters" role="search">
             <div className="col-12">
-              <div className="card">
-                <div className="card--content">
-                  <label htmlFor="cityselect">City:</label>
-                  <select onChange={cityChange} id="cityselect">
-                    {cities.map((city,idx) => (
-                      <option value={idx} key={idx}>{city.name}</option>
-                    ))}
-                  </select>
-                </div>
-                <div className="card--content">
-                  <label htmlFor="keywordsearch">Search:</label>
-                  <input type="text" onChange={customSearch} placeholder="keyword search" id="keywordsearch" name="keysearch"></input>
-                </div>
+              <div className="card row">
+                  <div className="col-12 col-lg-2"><b>Zomoto Search</b></div>
+                  <div className="col-12 col-lg-10">
+
+                    <div className="card--content">
+                      <label htmlFor="cityselect">City:</label>
+                      <select onChange={cityChange} id="cityselect">
+                        {cities.map((city,idx) => (
+                          <option value={idx} key={idx}>{city.name}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="card--content">
+                      <label htmlFor="keywordsearch">Search:</label>
+                      <input type="text" onChange={customSearch} placeholder="keyword search" id="keywordsearch" name="keysearch"></input>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -90,7 +103,7 @@ function App() {
                 
                 <div className="card">
                   <div className="card--img">
-                    <img src={resta.restaurant.featured_image?resta.restaurant.featured_image:logo} className="card--img--image" alt={ 'The restaurant image of '+resta.restaurant.name} />
+                    <img src={resta.restaurant.thumb?resta.restaurant.thumb:logo} className="card--img--image" alt={ 'The restaurant image of '+resta.restaurant.name} />
                   </div>
                   <div className="card--content">
                     <h2 className="card--content--title">{resta.restaurant.name}</h2>

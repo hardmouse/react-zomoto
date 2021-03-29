@@ -23,6 +23,17 @@
 .card--content--detail {
   font-size: 1rem;
 }
+.card--content--detail i{
+  display: block;
+  font-size: 0.8rem;
+}
+.card--content--detail b{
+  display: block;
+  padding-left: 0.5rem;
+}
+.card--content-head{
+  padding-right: 1rem;
+}
 .card--img--image {
   width: 10rem;
   background-color: #333;
