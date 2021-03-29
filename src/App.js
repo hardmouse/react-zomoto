@@ -25,7 +25,6 @@ function App() {
     let _tempURL = searchStr[0] + currentCity.city_id + searchStr[1] + e.target.value;
     
     setSearch(_tempURL);
-    console.log(_tempURL,currentD);
   }
 
   function showEntity(_obj,_name,_class=""){
@@ -83,7 +82,7 @@ function App() {
                     </div>
                     <div className="card--content">
                       <label htmlFor="keywordsearch">Search:</label>
-                      <input type="text" onChange={customSearch} placeholder="keyword search" id="keywordsearch" name="keysearch"></input>
+                      <input type="text" onChange={customSearch} placeholder="keyword search" id="keywordsearch" name="keysearch"  maxlength="20"></input>
                     </div>
                   </div>
               </div>

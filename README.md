@@ -1,8 +1,8 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-To view the working test site, please visit [My Test Site](https://zomoto.hardmouse.com/).
-Repo is @ [Here in Github](https://github.com/hardmouse/react-zomoto). 
+> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> To view the working test site, please visit [My Test Site](https://zomoto.hardmouse.com/).
+> Repo is @ [Here in Github](https://github.com/hardmouse/react-zomoto). 
 
 ## Available Scripts
 
