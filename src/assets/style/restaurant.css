@@ -1,0 +1,64 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  background-color: #fff;
+  color: #555;
+  border-radius: 5px;
+  min-height: calc(100% - 1rem);
+  padding: 1rem;
+  margin: 00.5rem;
+}
+
+.card--content,
+.card--img {
+  display: inline-block;
+}
+.card--content {
+  padding-left: 0.5rem;
+}
+.card--content--title {
+  margin: 0;
+}
+.card--content--detail {
+  font-size: 1rem;
+}
+.card--img--image {
+  width: 10rem;
+  background-color: #333;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  border-radius: 0;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
