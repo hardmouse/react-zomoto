@@ -10,11 +10,11 @@
   margin: 00.5rem;
 }
 
-.card--content,
 .card--img {
-  display: inline-block;
+  display: block;
 }
 .card--content {
+  display: inline-block;
   padding-left: 0.5rem;
 }
 .card--content--title {
@@ -35,7 +35,7 @@
   padding-right: 1rem;
 }
 .card--img--image {
-  width: 10rem;
+  width: 5rem;
   background-color: #333;
 }
 
@@ -76,10 +76,7 @@ select {
 
 
 @media (min-width: 992px) {
-  .card--img {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
+  .card--img--image {
+    width: 10rem;
   }
 }
