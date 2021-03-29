@@ -2,6 +2,7 @@
 
 #### 1.	How long did you spend on the coding assignment? What would you add to your solution if you had more time? If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add.
 > I spend 2 days (around 12 hours) on the test. Most of time on findout how ZOMOTO API works and trying to find the proper API Key. I think they no longer issue the API key to new developers. Most of developer link are point to 404 page.
+> For test, I'm not familiar with JEST for ReactJS. I can only use Cypress for test but haven't got any chance to apply on ReactJS.
 
 #### 2.	What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
 > Hooks. I wouldn't say it can totally replace REDUX but much intutive when used on simple tasks. So I have used Hooks instead of REDUX in test.
