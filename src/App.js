@@ -6,12 +6,6 @@ import { cities } from './model/city-list';
 import { mocks } from './assets/mockData'
 
 function App() {
-
-
-  // working key need to replace '----' with 'cd20' at the end
-  const keys = ['a725a13c0e61675a1eb07e3df050----','7749b19667964b87a3efc739e254ada2'];
-
-
   const searchStr = ["https://developers.zomato.com/api/v2.1/search?entity_id=","&entity_type=city&start=0&count=10&q="];
   const [currentCity, setCurrentCity] = useState(cities[0]);
   const [currentD, setCurrentD] = useState("");
@@ -42,14 +36,14 @@ function App() {
     fetch(search, {
       "method": "GET",
       "headers": {
-          "user-key": keys[0],
+          "user-key": process.env.REACT_APP_ZMOTO_KEY,
           "content-type": "application/json"
         }
       })
     .then((response) => {
       response.json().then((data) => {
         if(!data.code){
-          console.log(data);
+          // console.log(data);
           setRestaurantList(data.restaurants);
         }else{
           console.log(mocks);
