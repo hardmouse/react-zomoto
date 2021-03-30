@@ -184,7 +184,7 @@ function App() {
                     <h2 className="card--content--title">{resta.name}</h2>
                     {showEntity(resta.location.address1,'Address:','card--content--detail')}
                     {showEntity(resta.display_phone,'Numbers:','card--content--detail')}
-                    {showEntity(resta.rating,'Cuisines:','card--content--detail')}
+                    {showEntity(resta.rating,'Rating:','card--content--detail')}
                   </div>
                 </div>
               </div>

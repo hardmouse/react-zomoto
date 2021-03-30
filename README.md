@@ -39,4 +39,14 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+## CORS issue
 
+API usually has CORS issue in local development
+
+### Solution 1
+
+Use [https://cors-anywhere.herokuapp.com/](cors-anywhere@herokuapp). Need to open https://cors-anywhere.herokuapp.com/ and grant the access in local development. Then use 
+```
+https://cors-anywhere.herokuapp.com/{https://api.yelp.com/v3/businesses/search}
+```
+to access the API. 
