@@ -20,22 +20,25 @@ function App() {
 
   function cityChange(e){
     setCurrentCity(cities[e.target.value]);
-    let _tempURL = searchStr[0] + cities[e.target.value].city_id + searchStr[1] + currentD;
-    setSearch(_tempURL);
-    setSearchYelp(_tempURL);
+    // let _tempURL = searchStr[0] + cities[e.target.value].city_id + searchStr[1] + currentD;
+    // setSearch(_tempURL);
+    setSearchYelp();
     console.log(cities[e.target.value]);
   }
 
   function customSearch(e){
     setCurrentD(e.target.value);
     
-    let _tempURL = searchStr[0] + currentCity.city_id + searchStr[1] + e.target.value;
+    // let _tempURL = searchStr[0] + currentCity.city_id + searchStr[1] + e.target.value;
     
-    setSearch(_tempURL);
+    // setSearch(_tempURL);
+    
+    setSearchYelp();
   }
 
-  function showEntity(_obj,_name,_class=""){
-    let _reval = _obj ? ( <div className={_class}><i>{_name}</i><b>{_obj}</b> </div>):(" ");
+  function showEntity(_obj,_name,_class="",_extra=""){
+    let _extraData = _extra ? (<span>, {_extra}</span>):("");
+    let _reval = _obj ? ( <div className={_class}><i>{_name}</i><b>{_obj}{_extraData}</b> </div>):(" ");
     return _reval;
   }
   useEffect(()=>{
@@ -73,8 +76,8 @@ function App() {
         Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`
       },
       params: {
-        location: 'toronto',
-        categories: 'breakfast_brunch',
+        location: currentCity.name,
+        categories: currentD,
       }
     })
     .then((res) => {
@@ -125,7 +128,7 @@ function App() {
   //   });
 
 
-  },[searchYelpUrl2])
+  },[currentCity, searchYelp])
   
   return (
     <div className="App">
@@ -154,7 +157,7 @@ function App() {
                     </div>
                     <div className="card--content">
                       <label htmlFor="keywordsearch">Search:</label>
-                      <input type="text" onChange={customSearch} placeholder="keyword search" id="keywordsearch" name="keysearch"  maxlength="20"></input>
+                      <input type="text" onChange={customSearch} placeholder="keyword search" id="keywordsearch" name="keysearch"  maxLength="20"></input>
                     </div>
                   </div>
               </div>
@@ -182,7 +185,7 @@ function App() {
                   </div>
                   <div className="card--content">
                     <h2 className="card--content--title">{resta.name}</h2>
-                    {showEntity(resta.location.address1,'Address:','card--content--detail')}
+                    {showEntity(resta.location.address1,'Address:','card--content--detail',resta.location.city)}
                     {showEntity(resta.display_phone,'Numbers:','card--content--detail')}
                     {showEntity(resta.rating,'Rating:','card--content--detail')}
                   </div>
