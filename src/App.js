@@ -17,6 +17,13 @@ function App() {
   const [restaurantList, setRestaurantList] = useState([]);
   const [search, setSearch] = useState(searchStr[0] + currentCity.city_id + searchStr[1]);
   const [searchYelp, setSearchYelp] = useState(searchYelpUrl);
+  // let tempList = [];
+
+  // function updateLocalStorage(_name="", _data=[]){
+  //     localStorage.setItem(_name, JSON.stringify(_data));
+  // }
+
+
 
   function cityChange(e){
     setCurrentCity(cities[e.target.value]);
@@ -41,7 +48,17 @@ function App() {
     let _reval = _obj ? ( <div className={_class}><i>{_name}</i><b>{_obj}{_extraData}</b> </div>):(" ");
     return _reval;
   }
+
+  function viewDetail(_i){
+    restaurantList[_i].viewDetail = !restaurantList[_i].viewDetail;
+    setRestaurantList(restaurantList);
+    console.log("i",restaurantList[_i].viewDetail);
+  }
+
   useEffect(()=>{
+
+
+
     // fetch(search, {
     //   "method": "GET",
     //   "headers": {
@@ -54,9 +71,12 @@ function App() {
     //     if(!data.code){
     //       // console.log(data);
     //       setRestaurantList(data.restaurants);
+          
+    //       // updateLocalStorage("Zomoto",data.restaurants);
     //     }else{
     //       console.log(mocks);
     //       setRestaurantList(mocks);
+    //       // updateLocalStorage("Zomoto",mocks);
     //     }
     //   });
     // })
@@ -81,6 +101,10 @@ function App() {
       }
     })
     .then((res) => {
+      res.data.businesses.forEach(item=>{
+        item["detailView"] = true;
+        // console.log(item);
+      })
       console.log(res.data.businesses);
       setRestaurantList(res.data.businesses);
     })
@@ -104,31 +128,9 @@ function App() {
 
 
 
-  //   fetch(searchYelp, {
-  //     "method": "GET",
-  //     "header": {
-  //       Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`,
-  //       Origin: 'https://main.pluralsight.com',
-  //       withCredentials: true
-  //     }
-  //   })
-  //   .then((response) => {
-  //     response.json().then((data) => {
-  //       if(!data.code){//Access-Control-Allow-Origin
-  //         console.log("YELP NO CODE:",data);
-  //         // setRestaurantList(data.restaurants);
-  //       }else{
-  //         console.log("YELP:",data);
-  //         // setRestaurantList(mocks);
-  //       }
-  //     });
-  //   })
-  //   .catch((error) => {
-  //     console.log(error,mocks);
-  //   });
 
 
-  },[currentCity, searchYelp])
+  },[currentD, currentCity, search])
   
   return (
     <div className="App">
@@ -170,6 +172,8 @@ function App() {
               <div className="col-12 col-lg-6" key={idx}>
                 
                 <div className="card">
+
+
                   {/* <div className="card--img">
                     <img src={resta.restaurant.thumb?resta.restaurant.thumb:logo} className="card--img--image" alt={ 'The restaurant image of '+resta.restaurant.name} />
                   </div>
@@ -180,6 +184,7 @@ function App() {
                     {showEntity(resta.restaurant.cuisines,'Cuisines:','card--content--detail')}
                   </div> */}
 
+
                   <div className="card--img">
                     <img src={resta.image_url?resta.image_url:logo} className="card--img--image" alt={ 'The restaurant image of '+resta.name} />
                   </div>
@@ -188,7 +193,14 @@ function App() {
                     {showEntity(resta.location.address1,'Address:','card--content--detail',resta.location.city)}
                     {showEntity(resta.display_phone,'Numbers:','card--content--detail')}
                     {showEntity(resta.rating,'Rating:','card--content--detail')}
+                    {<div className="card--content--detail">
+                      <button onClick={() => viewDetail(idx)}>VIEW {resta.viewDetail}</button>
+                      <p className={!resta.viewDetail?'card--content--detail--hide':''}>{JSON.stringify(resta, null, 2) }</p>
+                      </div>}
                   </div>
+
+
+
                 </div>
               </div>
             ))
