@@ -1,17 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 import './assets/style/restaurant.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { cities } from './model/city-list';
 // import { zomotoMocks, netflixMocks } from './assets/mocks/mockData';
 // import { coinlistMocks } from './assets/mocks/coins/coinlist';
 // import { currencyMocks } from './assets/mocks/coins/currencymocks';
 import axios from 'axios';
 
+import D3test from './components/d3'
+
+
+
 function App() {
-  const data = [4, 8, 15, 16, 23, 42];
-  const divD3 = document.createElement("div");
-  divD3.innerHTML = "Hello, world!";
 
 
 
@@ -70,23 +71,27 @@ function App() {
     setRestaurantList(restaurantList);
     console.log("i",restaurantList[_i].viewDetail);
   }
+
+
 //process.env.REACT_APP_RAPIDAPI_KEY,
   useEffect(()=>{
-    const options = {
-      method: 'GET',
-      url: 'https://coingecko.p.rapidapi.com/coins/bitcoin/history',
-      params: {date: '30-03-2021'},
-      headers: {
-        'x-rapidapi-key': process.env.REACT_APP_RAPIDAPI_KEY,
-        'x-rapidapi-host': 'coingecko.p.rapidapi.com'
-      }
-    };
+
+
+    // const options = {
+    //   method: 'GET',
+    //   url: 'https://coingecko.p.rapidapi.com/coins/bitcoin/history',
+    //   params: {date: '30-03-2021'},
+    //   headers: {
+    //     'x-rapidapi-key': process.env.REACT_APP_RAPIDAPI_KEY,
+    //     'x-rapidapi-host': 'coingecko.p.rapidapi.com'
+    //   }
+    // };
     
-    axios.request(options).then(function (response) {
-      console.log(response.data);
-    }).catch(function (error) {
-      console.error(error);
-    });
+    // axios.request(options).then(function (response) {
+    //   console.log(response.data);
+    // }).catch(function (error) {
+    //   console.error(error);
+    // });
 
     // const options = {
     //   method: 'GET',
@@ -208,6 +213,7 @@ function App() {
         <h1>
           City:{currentCity.name} | Value: {currentD}
         </h1>
+        
       </header>
       <div className="container-fluid">
         
@@ -276,6 +282,7 @@ function App() {
             ))
           }
           </main>
+<div><h2><D3test /></h2></div>
         </div>
       </div>
     </div>
