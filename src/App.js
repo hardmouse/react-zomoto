@@ -3,9 +3,25 @@ import './App.css';
 import './assets/style/restaurant.css';
 import { useState, useEffect } from 'react';
 import { cities } from './model/city-list';
-import { mocks } from './assets/mockData'
+// import { zomotoMocks, netflixMocks } from './assets/mocks/mockData';
+// import { coinlistMocks } from './assets/mocks/coins/coinlist';
+// import { currencyMocks } from './assets/mocks/coins/currencymocks';
 import axios from 'axios';
+
 function App() {
+  const data = [4, 8, 15, 16, 23, 42];
+  const divD3 = document.createElement("div");
+  divD3.innerHTML = "Hello, world!";
+
+
+
+
+
+
+
+
+
+  
   const searchStr = [
     "https://developers.zomato.com/api/v2.1/search?entity_id=",
     "&entity_type=city&start=0&count=10&q="
@@ -19,28 +35,28 @@ function App() {
   const [searchYelp, setSearchYelp] = useState(searchYelpUrl);
   // let tempList = [];
 
-  // function updateLocalStorage(_name="", _data=[]){
-  //     localStorage.setItem(_name, JSON.stringify(_data));
-  // }
+  function updateLocalStorage(_name="", _data=[]){
+      localStorage.setItem(_name, JSON.stringify(_data));
+  }
 
 
 
   function cityChange(e){
     setCurrentCity(cities[e.target.value]);
-    // let _tempURL = searchStr[0] + cities[e.target.value].city_id + searchStr[1] + currentD;
-    // setSearch(_tempURL);
-    setSearchYelp();
+    let _tempURL = searchStr[0] + cities[e.target.value].city_id + searchStr[1] + currentD;
+    setSearch(_tempURL);
+    // setSearchYelp();
     console.log(cities[e.target.value]);
   }
 
   function customSearch(e){
     setCurrentD(e.target.value);
     
-    // let _tempURL = searchStr[0] + currentCity.city_id + searchStr[1] + e.target.value;
+    let _tempURL = searchStr[0] + currentCity.city_id + searchStr[1] + e.target.value;
     
-    // setSearch(_tempURL);
+    setSearch(_tempURL);
     
-    setSearchYelp();
+    // setSearchYelp();
   }
 
   function showEntity(_obj,_name,_class="",_extra=""){
@@ -54,8 +70,62 @@ function App() {
     setRestaurantList(restaurantList);
     console.log("i",restaurantList[_i].viewDetail);
   }
-
+//process.env.REACT_APP_RAPIDAPI_KEY,
   useEffect(()=>{
+    const options = {
+      method: 'GET',
+      url: 'https://coingecko.p.rapidapi.com/coins/bitcoin/history',
+      params: {date: '30-03-2021'},
+      headers: {
+        'x-rapidapi-key': process.env.REACT_APP_RAPIDAPI_KEY,
+        'x-rapidapi-host': 'coingecko.p.rapidapi.com'
+      }
+    };
+    
+    axios.request(options).then(function (response) {
+      console.log(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
+
+    // const options = {
+    //   method: 'GET',
+    //   url: 'https://coingecko.p.rapidapi.com/simple/price',
+    //   params: {ids: coinlistMocks[810].id, vs_currencies: currencyMocks[19]},
+    //   headers: {
+    //     'x-rapidapi-key': process.env.REACT_APP_RAPIDAPI_KEY,
+    //     'x-rapidapi-host': 'coingecko.p.rapidapi.com'
+    //   }
+    // };
+    
+    // axios.request(options).then(function (response) {
+    //   console.log(response.data);
+    // }).catch(function (error) {
+    //   console.error(error);
+    // });
+
+
+
+
+
+    // const options = {
+    //   method: 'GET',
+    //   url: 'https://unogsng.p.rapidapi.com/genres',
+    //   headers: {
+    //     'x-rapidapi-key': process.env.REACT_APP_RAPIDAPI_KEY,
+    //     'x-rapidapi-host': 'unogsng.p.rapidapi.com'
+    //   }
+    // };
+    
+    // axios.request(options).then(function (response) {
+    //   console.log(response.data);
+    // }).catch(function (error) {
+    //   console.error(error);
+    // });
+
+
+
+
 
 
 
@@ -91,26 +161,26 @@ function App() {
 
 
 
-    axios.get(searchYelpUrl2, {
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`
-      },
-      params: {
-        location: currentCity.name,
-        categories: currentD,
-      }
-    })
-    .then((res) => {
-      res.data.businesses.forEach(item=>{
-        item["detailView"] = true;
-        // console.log(item);
-      })
-      console.log(res.data.businesses);
-      setRestaurantList(res.data.businesses);
-    })
-    .catch((err) => {
-      console.log ('error')
-    })
+    // axios.get(searchYelpUrl2, {
+    //   headers: {
+    //     Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`
+    //   },
+    //   params: {
+    //     location: currentCity.name,
+    //     categories: currentD,
+    //   }
+    // })
+    // .then((res) => {
+    //   res.data.businesses.forEach(item=>{
+    //     item["detailView"] = true;
+    //     // console.log(item);
+    //   })
+    //   console.log(res.data.businesses);
+    //   setRestaurantList(res.data.businesses);
+    // })
+    // .catch((err) => {
+    //   console.log ('error')
+    // })
 
 
 
@@ -185,7 +255,7 @@ function App() {
                   </div> */}
 
 
-                  <div className="card--img">
+                  {/* <div className="card--img">
                     <img src={resta.image_url?resta.image_url:logo} className="card--img--image" alt={ 'The restaurant image of '+resta.name} />
                   </div>
                   <div className="card--content">
@@ -197,7 +267,7 @@ function App() {
                       <button onClick={() => viewDetail(idx)}>VIEW {resta.viewDetail}</button>
                       <p className={!resta.viewDetail?'card--content--detail--hide':''}>{JSON.stringify(resta, null, 2) }</p>
                       </div>}
-                  </div>
+                  </div> */}
 
 
 

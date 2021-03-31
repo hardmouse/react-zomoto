@@ -1,0 +1,485 @@
+[
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 0,
+        "entity_name": "Warsaw, Poland, Poland",
+        "entity_type": "",
+        "entity_latitude": 52.2296756,
+        "entity_longitude": 21.0122287,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "Poland, Poland",
+        "location_type": "locality",
+        "icon": {
+            "code": "e92c"
+        },
+        "place": {
+            "id": 0,
+            "place_id": "ChIJAZ-GmmbMHkcR_NPqiCq-8HI",
+            "place_type": "GOOGLE_PLACE",
+            "place_name": "Warsaw, Poland",
+            "place_name_main": "Warsaw",
+            "place_name_secondary": "Poland",
+            "latitude": 52.2296756,
+            "longitude": 21.0122287,
+            "cell_id": "0",
+            "delivery_subzone_id": 0,
+            "fetch_from_google": false,
+            "location_type": "locality"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 0,
+        "entity_name": "Warsaw, IN, USA",
+        "entity_type": "",
+        "entity_latitude": 0,
+        "entity_longitude": 0,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "IN, USA",
+        "location_type": "locality",
+        "icon": {
+            "code": "e92c"
+        },
+        "place": {
+            "place_id": "ChIJZ7-cQiycFogRAMhnvFnmkbU",
+            "place_type": "GOOGLE_PLACE",
+            "place_name": "Warsaw, IN, USA",
+            "place_name_main": "Warsaw",
+            "place_name_secondary": "IN, USA",
+            "cell_id": "0",
+            "delivery_subzone_id": 0,
+            "fetch_from_google": false,
+            "location_type": "locality"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 0,
+        "entity_name": "Warsaw, MO, USA",
+        "entity_type": "",
+        "entity_latitude": 0,
+        "entity_longitude": 0,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "MO, USA",
+        "location_type": "locality",
+        "icon": {
+            "code": "e92c"
+        },
+        "place": {
+            "place_id": "ChIJaWXf6LVBxIcRdaIIPAaBvzs",
+            "place_type": "GOOGLE_PLACE",
+            "place_name": "Warsaw, MO, USA",
+            "place_name_main": "Warsaw",
+            "place_name_secondary": "MO, USA",
+            "cell_id": "0",
+            "delivery_subzone_id": 0,
+            "fetch_from_google": false,
+            "location_type": "locality"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 0,
+        "entity_name": "Warsaw, NC, USA",
+        "entity_type": "",
+        "entity_latitude": 0,
+        "entity_longitude": 0,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "NC, USA",
+        "location_type": "locality",
+        "icon": {
+            "code": "e92c"
+        },
+        "place": {
+            "place_id": "ChIJgUWidG_nq4kR8vOUzGgUqeE",
+            "place_type": "GOOGLE_PLACE",
+            "place_name": "Warsaw, NC, USA",
+            "place_name_main": "Warsaw",
+            "place_name_secondary": "NC, USA",
+            "cell_id": "0",
+            "delivery_subzone_id": 0,
+            "fetch_from_google": false,
+            "location_type": "locality"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 0,
+        "entity_name": "Warsaw, NY, USA",
+        "entity_type": "",
+        "entity_latitude": 0,
+        "entity_longitude": 0,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "NY, USA",
+        "location_type": "locality",
+        "icon": {
+            "code": "e92c"
+        },
+        "place": {
+            "place_id": "ChIJMfe1aBrF04kRw8wRLeBSlsE",
+            "place_type": "GOOGLE_PLACE",
+            "place_name": "Warsaw, NY, USA",
+            "place_name_main": "Warsaw",
+            "place_name_secondary": "NY, USA",
+            "cell_id": "0",
+            "delivery_subzone_id": 0,
+            "fetch_from_google": false,
+            "location_type": "locality"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 109,
+        "entity_name": "Warsaw, Poland",
+        "entity_type": "city",
+        "entity_latitude": 52.2333,
+        "entity_longitude": 21.0167,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "Poland",
+        "location_type": "",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 5299,
+        "entity_name": "Warsaw, IL, USA",
+        "entity_type": "city",
+        "entity_latitude": 40.3607959375,
+        "entity_longitude": -91.4353992125,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "IL, USA",
+        "location_type": "",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 5538,
+        "entity_name": "Warsaw, IN, USA",
+        "entity_type": "city",
+        "entity_latitude": 41.2418595686,
+        "entity_longitude": -85.8405220248,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "IN, USA",
+        "location_type": "",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 5841,
+        "entity_name": "Warsaw, KY, USA",
+        "entity_type": "city",
+        "entity_latitude": 38.7844823273,
+        "entity_longitude": -84.8842243182,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "KY, USA",
+        "location_type": "",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 6869,
+        "entity_name": "Warsaw, MO, USA",
+        "entity_type": "city",
+        "entity_latitude": 38.2458697286,
+        "entity_longitude": -93.3629596633,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "MO, USA",
+        "location_type": "",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 7776,
+        "entity_name": "Warsaw, NY, USA",
+        "entity_type": "city",
+        "entity_latitude": 42.7446691111,
+        "entity_longitude": -78.1346141667,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "NY, USA",
+        "location_type": "",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 7149,
+        "entity_name": "Warsaw, NC, USA",
+        "entity_type": "city",
+        "entity_latitude": 34.995912,
+        "entity_longitude": -78.1203642,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "NC, USA",
+        "location_type": "",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 8075,
+        "entity_name": "Warsaw, OH, USA",
+        "entity_type": "city",
+        "entity_latitude": 40.3255661429,
+        "entity_longitude": -82.05401,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "OH, USA",
+        "location_type": "",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 9688,
+        "entity_name": "Warsaw, VA, USA",
+        "entity_type": "city",
+        "entity_latitude": 37.9976259136,
+        "entity_longitude": -76.7781604455,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw",
+        "display_subtitle": "VA, USA",
+        "location_type": "",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 29792,
+        "entity_name": "Warsaw Marriott Hotel, Centrum, Warsaw, Poland",
+        "entity_type": "group",
+        "entity_latitude": 52.2281694444,
+        "entity_longitude": 21.0026194444,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Warsaw Marriott Hotel",
+        "display_subtitle": "Centrum, Warsaw, Poland",
+        "location_type": "group",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 29311,
+        "entity_name": "BUW, Powiśle, Warsaw, Poland",
+        "entity_type": "group",
+        "entity_latitude": 52.242399,
+        "entity_longitude": 21.024428,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "BUW",
+        "display_subtitle": "Powiśle, Warsaw, Poland",
+        "location_type": "group",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 29501,
+        "entity_name": "CH Arkada, Powiśle, Warsaw, Poland",
+        "entity_type": "group",
+        "entity_latitude": 52.234009,
+        "entity_longitude": 21.032619,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "CH Arkada",
+        "display_subtitle": "Powiśle, Warsaw, Poland",
+        "location_type": "group",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 29670,
+        "entity_name": "Blue City, Szczęśliwice, Warsaw, Poland",
+        "entity_type": "group",
+        "entity_latitude": 52.212876,
+        "entity_longitude": 20.955439,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Blue City",
+        "display_subtitle": "Szczęśliwice, Warsaw, Poland",
+        "location_type": "group",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 29677,
+        "entity_name": "Reduta, Szczęśliwice , Warsaw, Poland",
+        "entity_type": "group",
+        "entity_latitude": 52.21297,
+        "entity_longitude": 20.951158,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Reduta",
+        "display_subtitle": "Szczęśliwice , Warsaw, Poland",
+        "location_type": "group",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 29691,
+        "entity_name": "King Cross Praga, Gocławek, Warsaw, Poland",
+        "entity_type": "group",
+        "entity_latitude": 52.2348333333,
+        "entity_longitude": 21.1193972222,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "King Cross Praga",
+        "display_subtitle": "Gocławek, Warsaw, Poland",
+        "location_type": "group",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 29692,
+        "entity_name": "CH Arkadia, Muranów, Warsaw, Poland",
+        "entity_type": "group",
+        "entity_latitude": 52.2562666667,
+        "entity_longitude": 20.9837,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "CH Arkadia",
+        "display_subtitle": "Muranów, Warsaw, Poland",
+        "location_type": "group",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 29702,
+        "entity_name": "Galeria Mokotów, Służew, Warsaw, Poland",
+        "entity_type": "group",
+        "entity_latitude": 52.179519,
+        "entity_longitude": 21.004205,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Galeria Mokotów",
+        "display_subtitle": "Służew, Warsaw, Poland",
+        "location_type": "group",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 29703,
+        "entity_name": "Rondo 1, Centrum, Warsaw, Poland",
+        "entity_type": "group",
+        "entity_latitude": 52.2333163998,
+        "entity_longitude": 20.9997892007,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Rondo 1",
+        "display_subtitle": "Centrum, Warsaw, Poland",
+        "location_type": "group",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 29710,
+        "entity_name": "CH Land, Służew, Warsaw, Poland",
+        "entity_type": "group",
+        "entity_latitude": 52.1720472222,
+        "entity_longitude": 21.0251638889,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "CH Land",
+        "display_subtitle": "Służew, Warsaw, Poland",
+        "location_type": "group",
+        "icon": {
+            "code": "e92c"
+        }
+    },
+    {
+        "delivery_subzone_id": 0,
+        "delivery_subzone_alias_id": 0,
+        "entity_id": 29713,
+        "entity_name": "Sadyba Best Mall, Sadyba, Warsaw, Poland",
+        "entity_type": "group",
+        "entity_latitude": 52.1871052563,
+        "entity_longitude": 21.0618159547,
+        "is_order_location": 0,
+        "is_google_search_enabled": true,
+        "display_title": "Sadyba Best Mall",
+        "display_subtitle": "Sadyba, Warsaw, Poland",
+        "location_type": "group",
+        "icon": {
+            "code": "e92c"
+        }
+    }
+]
