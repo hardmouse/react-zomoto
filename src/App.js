@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import './assets/style/restaurant.css';
 import { useState, useEffect, useRef } from 'react';
@@ -6,7 +6,7 @@ import { cities } from './model/city-list';
 // import { zomotoMocks, netflixMocks } from './assets/mocks/mockData';
 // import { coinlistMocks } from './assets/mocks/coins/coinlist';
 // import { currencyMocks } from './assets/mocks/coins/currencymocks';
-import axios from 'axios';
+// import axios from 'axios';
 
 import D3test from './components/d3'
 
