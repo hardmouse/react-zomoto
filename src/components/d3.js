@@ -1,6 +1,6 @@
 import React from "react";
 
-import './ds.css';
+import './ds.scss';
 import axios from "axios";
 import * as d3 from "d3";
 class D3test extends React.Component {
@@ -162,7 +162,7 @@ class D3test extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="full">
         <div ref={this.myRef} className="d3-canvas"></div>
         <button onClick={this.ran}>click</button>
       </div>

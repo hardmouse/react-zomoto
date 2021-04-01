@@ -1,43 +1,43 @@
-.card {
+.yelp-card {
   display: flex;
   flex-direction: row;
   text-align: left;
   background-color: #fff;
   color: #555;
   border-radius: 5px;
+  border: 1px solid #CCC;
   min-height: calc(100% - 1rem);
   padding: 1rem;
   margin: 00.5rem;
 }
-
-.card--img {
+.yelp-card--img {
   display: block;
 }
-.card--content {
+.yelp-card--content {
   display: inline-block;
   padding-left: 0.5rem;
 }
-.card--content--title {
+.yelp-card--content--title {
   margin: 0;
 }
-.card--content--detail {
+.yelp-card--content--detail {
   font-size: 1rem;
 }
-.card--content--detail i{
+.yelp-card--content--detail i{
   display: block;
   font-size: 0.8rem;
 }
-.card--content--detail b{
+.yelp-card--content--detail b{
   display: block;
   padding-left: 0.5rem;
 }
-.card--content--detail--hide{
+.yelp-card--content--detail--hide{
   display: none;
 }
-.card--content-head{
+.yelp-card--content-head{
   padding-right: 1rem;
 }
-.card--img--image {
+.yelp-card--img--image {
   width: 5rem;
   background-color: #333;
 }
@@ -79,7 +79,7 @@ select {
 
 
 @media (min-width: 992px) {
-  .card--img--image {
+  .yelp-card--img--image {
     width: 10rem;
   }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './assets/style/grid.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import './index.scss';
+import './assets/style/grid.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
