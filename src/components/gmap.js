@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import GoogleMapReact from 'google-map-react';
- 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+import './gmap.scss';
+const AnyReactComponent = ({ text }) => <div className="gmap--marker"><i className="webfonts icon-home"></i>{text}</div>;
  
 class GMap extends Component {
   static defaultProps = {
@@ -11,13 +11,6 @@ class GMap extends Component {
     },
     zoom: 12
   };
-  // renderMarkers(map, maps) {
-  //   let marker = new maps.Marker({
-  //     position: this.defaultProps,
-  //     map,
-  //     title: 'Hello World!'
-  //   });
-  // }
   render() {
     return (
       // Important! Always set the container height explicitly
@@ -33,6 +26,11 @@ class GMap extends Component {
             lat={43.9066093}
             lng={-79.3014838}
             text="My Marker"
+          />
+          <AnyReactComponent
+            lat={43.90}
+            lng={-79.28}
+            text="My Marker 2"
           />
         </GoogleMapReact>
       </div>
