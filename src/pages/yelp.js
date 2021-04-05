@@ -6,32 +6,28 @@ import { cities } from "./../model/city-list";
 // import { coinlistMocks } from './assets/mocks/coins/coinlist';
 // import { currencyMocks } from './assets/mocks/coins/currencymocks';
 import axios from "axios";
-
+let _tem = [];
 function Yelp() {
-  const searchStr = [
-    "https://developers.zomato.com/api/v2.1/search?entity_id=",
-    "&entity_type=city&start=0&count=10&q=",
-  ];
   const searchYelpUrl =
-    "https://api.yelp.com/v3/businesses/search?term=burgers&location=toronto";
+    "https://api.yelp.com/v3/businesses/search";
   const searchYelpUrl2 =
     "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
   const [currentCity, setCurrentCity] = useState(cities[0]);
   const [currentD, setCurrentD] = useState("");
   const [restaurantList, setRestaurantList] = useState([]);
-  // const [search, setSearch] = useState(searchStr[0] + currentCity.city_id + searchStr[1]);
   const [searchYelp, setSearchYelp] = useState(searchYelpUrl);
-  // let tempList = [];
 
   function updateLocalStorage(_name = "", _data = []) {
     localStorage.setItem(_name, JSON.stringify(_data));
   }
 
-  function cityChange(e) {
-    setCurrentCity(cities[e.target.value]);
-    setSearchYelp();
-    console.log(cities[e.target.value]);
-  }
+  // function cityChange(e) {
+  //   setCurrentCity(cities[e.target.value]);
+  //   console.log(currentCity);
+  //   setSearchYelp();
+  //   // loadLiveData();
+  //   // console.log(cities[e.target.value]);
+  // }
 
   function customSearch(e) {
     setCurrentD(e.target.value);
@@ -54,16 +50,22 @@ function Yelp() {
     return _reval;
   }
 
-  function viewDetail(_i) {
-    restaurantList[_i].viewDetail = !restaurantList[_i].viewDetail;
-    setRestaurantList(restaurantList);
-    console.log("i", restaurantList[_i].viewDetail);
-  }
+  // function viewDetail(_i) {
+  //   restaurantList[_i].detailView = !restaurantList[_i].detailView;
+  //   var _t = restaurantList;
+  //   setRestaurantList(_t);
+  //   console.log("i", restaurantList[_i].detailView, "AFTER: ", _t[_i].detailView);
+  // }
+
+  // function loadLiveData(){
+  // }
 
   useEffect(() => {
-
-    axios
-      .get(searchYelpUrl2, {
+    console.log("Loadin City:",currentCity.name);
+    console.log("currentD.current:",currentD);
+    console.log("searchYelp.current:",searchYelp);
+    const fetchData = async () => {
+      const result = await axios.get(searchYelpUrl2, {
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`,
         },
@@ -72,24 +74,57 @@ function Yelp() {
           categories: currentD,
         },
       })
-      .then((res) => {
-        res.data.businesses.forEach((item) => {
-          item["detailView"] = true;
-        });
-        console.log(res.data.businesses);
-        setRestaurantList(res.data.businesses);
-      })
-      .catch((err) => {
-        console.log("error");
+      
+      // .then((res) => {
+      //   res.data.businesses.forEach((item) => {
+      //     item["detailView"] = true;
+      //   });
+      //   console.log(res.data.businesses);
+      //   setRestaurantList(res.data.businesses);
+      //   updateLocalStorage("yelpData",res.data.businesses);
+      // })
+      // .catch((err) => {
+      //   console.log("error");
+      // });
+      // return result;
+      console.log(result.data);
+      result.data.businesses.forEach((item) => {
+        item["detailView"] = false;
+        _tem.push(false);
       });
-  }, [currentD, currentCity, searchYelp]);
+      console.log(result.data.businesses);
+      setRestaurantList(result.data.businesses);
+      updateLocalStorage('yelpData_'+currentCity.name+'_'+currentD,result.data.businesses);
+    }
+
+
+    if(localStorage.getItem('yelpData_'+currentCity.name+'_'+currentD)){
+      // fetchData();
+      // let _t = JSON.parse(localStorage.getItem('yelpData'));
+      // _t.forEach(() => _tem.push(false));
+      console.log('LOCAL:',restaurantList);
+      // setViewDet(_tem);
+      setRestaurantList(JSON.parse(localStorage.getItem('yelpData_'+currentCity.name+'_'+currentD)));
+    }else{
+      console.log('Fetch remote')
+      fetchData();
+    }
+
+
+    // fetchData();
+    // if(localStorage.getItem('yelpData')){
+    //   setRestaurantList(JSON.parse(localStorage.getItem('yelpData')));
+    // }else{
+    //   loadLiveData();
+    // }//currentD, currentCity, searchYelp
+  }, [currentD,currentCity,searchYelp]);
 
   return (
     <div className="row no-gutters" role="search">
       <div className="col-12">
         <div className="yelp-card row">
           <h3>
-            City:{currentCity.name} | Value: {currentD}
+            City:{currentCity.name} | Value: {currentD} |
           </h3>
         </div>
       </div>
@@ -99,7 +134,10 @@ function Yelp() {
         <div className="col-12 col-lg-10">
           <div className="yelp-card--content">
             <label htmlFor="cityselect">City:</label>
-            <select onChange={cityChange} id="cityselect">
+            <select onChange={(_e) => {
+              setCurrentCity(cities[_e.target.value]);
+              console.log(cities[_e.target.value])
+            }} id="cityselect">
               {cities.map((city, idx) => (
                 <option value={idx} key={idx}>
                   {city.name}
@@ -135,48 +173,58 @@ function Yelp() {
             {restaurantList.map((resta, idx) => (
               <div className="col-12 col-lg-6" key={idx}>
                 <div className="yelp-card">
-
-                  <div className="yelp-card--img">
-                    <img
-                      src={resta.image_url ? resta.image_url : logo}
-                      className="yelp-card--img--image"
-                      alt={"The restaurant image of " + resta.name}
-                    />
-                  </div>
-                  <div className="yelp-card--content">
-                    <h2 className="yelp-card--content--title">{resta.name}</h2>
-                    {showEntity(
-                      resta.location.address1,
-                      "Address:",
-                      "yelp-card--content--detail",
-                      resta.location.city
-                    )}
-                    {showEntity(
-                      resta.display_phone,
-                      "Numbers:",
-                      "yelp-card--content--detail"
-                    )}
-                    {showEntity(
-                      resta.rating,
-                      "Rating:",
-                      "yelp-card--content--detail"
-                    )}
+                  <div className="row align-self-start">
+                    <div className="yelp-card--img col-12 col-md-4 align-self-start">
+                      <img
+                        src={resta.image_url ? resta.image_url : logo}
+                        className="yelp-card--img--image"
+                        alt={"The restaurant image of " + resta.name}
+                      />
+                    </div>
+                    <div className="yelp-card--content col-12 col-md-8 align-self-start">
+                      {/* <h4>
+                        {restaurantList[idx].detailView.toString()}
+                      </h4> */}
+                      <h2 className="yelp-card--content--title">{resta.name}</h2>
+                      {showEntity(
+                        resta.location.address1,
+                        "Address:",
+                        "yelp-card--content--detail",
+                        resta.location.city
+                      )}
+                      {showEntity(
+                        resta.display_phone,
+                        "Numbers:",
+                        "yelp-card--content--detail"
+                      )}
+                      {showEntity(
+                        resta.rating,
+                        "Rating:",
+                        "yelp-card--content--detail"
+                      )}
+                    </div>
+                  
                     {
-                      <div className="yelp-card--content--detail">
-                        <button onClick={() => viewDetail(idx)}>
-                          VIEW {resta.viewDetail}
-                        </button>
-                        <p
-                          className={
-                            !resta.viewDetail
-                              ? "yelp-card--content--detail--hide"
-                              : ""
-                          }
-                        >
-                          {JSON.stringify(resta, null, 2)}
-                        </p>
-                      </div>
-                    }
+                        <div className="yelp-card--content--detail col-12 align-self-start">
+                          <button onClick={() => {
+                            restaurantList[idx].detailView = !restaurantList[idx].detailView
+                            // resta.detailView = !resta.detailView;
+                            setRestaurantList(restaurantList.slice());
+
+                          }}>
+                            {resta.detailView ? 'Hide Detail':'View Detail'}
+                          </button>
+                          <p
+                            className={
+                              !resta.detailView
+                                ? "yelp-card--content--detail--hide"
+                                : ""
+                            }
+                          >
+                            {JSON.stringify(resta, null, 2)}
+                          </p>
+                        </div>
+                      }
                   </div>
                 </div>
               </div>
