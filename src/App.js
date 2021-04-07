@@ -13,6 +13,7 @@ import {
 import D3test from './components/d3';
 import GMap from './components/gmap';
 import Yelp from './pages/yelp';
+import Scene from './pages/threeJS'
 function App() {
   
   const [data, setData] = useState({ hits: [] });
@@ -37,6 +38,7 @@ function App() {
         <Link to="/"><i className="webfonts icon-home"></i>Home</Link>
         <Link to="/yelp"><i className="webfonts icon-th-large"></i>Yelp API</Link>
         <Link to="/D3test"><i className="webfonts icon-chart-bar"></i>D3.js</Link>
+        <Link to="/threejs"><i className="webfonts icon-globe"></i>ThreeJS</Link>
         <Link to="/gmap"><i className="webfonts icon-map"></i>G Map</Link>
       </header>
       <div className="container-fluid">
@@ -62,8 +64,11 @@ function App() {
                   <Route path="/yelp">
                     <Yelp />
                   </Route>
-                  <Route path="/D3test">
-                    <D3test />
+                  <Route path="/D3test" >
+                    <D3test parentGroup={query}/>
+                  </Route>
+                  <Route path="/threejs">
+                    <Scene />
                   </Route>
                   <Route path="/gmap">
                     <div className="gcard">

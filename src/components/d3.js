@@ -9,11 +9,15 @@ class D3test extends React.Component {
     this.myRef = React.createRef();
     this.dataset = [100, 200, 300, 400, 500];
     this.ran = this.ran.bind(this);
+    this.pg=props.parentGroup
+    console.log(props)
   }
 
   componentDidMount() {
     this.loadData(this.addChart);
     // this.addChart();
+    
+    console.log("triggered d3:",this.pg);
   }
   loadData() {
     var self = this;

@@ -4,6 +4,10 @@ export const cities = [
         city_id: 89
     },
     {
+        name:'Markham',
+        city_id: 87951
+    },
+    {
         name:'Vancouver',
         city_id: 256
     },

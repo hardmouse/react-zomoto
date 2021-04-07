@@ -1,6 +1,6 @@
 import logo from "./../assets/logo.svg";
 import "./../assets/style/restaurant.scss";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { cities } from "./../model/city-list";
 // import { zomotoMocks, netflixMocks } from './assets/mocks/mockData';
 // import { coinlistMocks } from './assets/mocks/coins/coinlist';
@@ -13,7 +13,7 @@ function Yelp() {
   const searchYelpUrl2 =
     "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
   const [currentCity, setCurrentCity] = useState(cities[0]);
-  const [currentD, setCurrentD] = useState("");
+  const [currentQuery, setCurrentQuery] = useState("");
   const [restaurantList, setRestaurantList] = useState([]);
   const [searchYelp, setSearchYelp] = useState(searchYelpUrl);
 
@@ -30,7 +30,7 @@ function Yelp() {
   // }
 
   function customSearch(e) {
-    setCurrentD(e.target.value);
+    setCurrentQuery(e.target.value);
     setSearchYelp();
   }
 
@@ -62,7 +62,7 @@ function Yelp() {
 
   useEffect(() => {
     console.log("Loadin City:",currentCity.name);
-    console.log("currentD.current:",currentD);
+    console.log("currentQuery.current:",currentQuery);
     console.log("searchYelp.current:",searchYelp);
     const fetchData = async () => {
       const result = await axios.get(searchYelpUrl2, {
@@ -71,7 +71,7 @@ function Yelp() {
         },
         params: {
           location: currentCity.name,
-          categories: currentD,
+          term: currentQuery,
         },
       })
       
@@ -94,17 +94,17 @@ function Yelp() {
       });
       console.log(result.data.businesses);
       setRestaurantList(result.data.businesses);
-      updateLocalStorage('yelpData_'+currentCity.name+'_'+currentD,result.data.businesses);
+      updateLocalStorage('yelpData_'+currentCity.name+'_'+currentQuery,result.data.businesses);
     }
 
 
-    if(localStorage.getItem('yelpData_'+currentCity.name+'_'+currentD)){
+    if(localStorage.getItem('yelpData_'+currentCity.name+'_'+currentQuery)){
       // fetchData();
       // let _t = JSON.parse(localStorage.getItem('yelpData'));
       // _t.forEach(() => _tem.push(false));
-      console.log('LOCAL:',restaurantList);
       // setViewDet(_tem);
-      setRestaurantList(JSON.parse(localStorage.getItem('yelpData_'+currentCity.name+'_'+currentD)));
+      // console.log('LOCAL:',restaurantList);
+      setRestaurantList(JSON.parse(localStorage.getItem('yelpData_'+currentCity.name+'_'+currentQuery)));
     }else{
       console.log('Fetch remote')
       fetchData();
@@ -116,15 +116,15 @@ function Yelp() {
     //   setRestaurantList(JSON.parse(localStorage.getItem('yelpData')));
     // }else{
     //   loadLiveData();
-    // }//currentD, currentCity, searchYelp
-  }, [currentD,currentCity,searchYelp]);
+    // }//currentQuery, currentCity, searchYelp
+  }, [currentQuery,currentCity,searchYelp]);
 
   return (
     <div className="row no-gutters" role="search">
       <div className="col-12">
         <div className="yelp-card row">
           <h3>
-            City:{currentCity.name} | Value: {currentD} |
+            City:{currentCity.name} | Value: {currentQuery} |
           </h3>
         </div>
       </div>
