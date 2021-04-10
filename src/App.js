@@ -68,7 +68,9 @@ function App() {
                     <D3test parentGroup={query}/>
                   </Route>
                   <Route path="/threejs">
-                    <Scene />
+                    <div id="threeBox">
+                      <Scene />
+                    </div>
                   </Route>
                   <Route path="/gmap">
                     <div className="gcard">

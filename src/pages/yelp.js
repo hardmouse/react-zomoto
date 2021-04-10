@@ -219,7 +219,7 @@ function Yelp() {
                               !resta.detailView
                                 ? "yelp-card--content--detail--hide"
                                 : ""
-                            }
+                            } 
                           >
                             {JSON.stringify(resta, null, 2)}
                           </p>
