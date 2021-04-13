@@ -164,6 +164,10 @@ function Yelp() {
                   <div>
                     <h2> Sorry, no result found.</h2>
                     <p>Please try other city or different key words. :)</p>
+                    <hr/>
+                    <p>
+                      Or, visit <a href="https://cors-anywhere.herokuapp.com" target="_blank">https://cors-anywhere.herokuapp.com</a> and allow your access to bypass CORS policy.
+                    </p>
                   </div>
                 </div>
               </div>
